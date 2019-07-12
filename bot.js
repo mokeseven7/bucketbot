@@ -28,17 +28,17 @@ if (process.env.MONGO_URI) {
 
 const adapter = new SlackAdapter({
     // parameters used to secure webhook endpoint
-    verificationToken: process.env.verificationToken,
-    clientSigningSecret: process.env.clientSigningSecret,  
+    verificationToken: process.env.VERIFICATION_TOKEN,
+    clientSigningSecret: process.env.CLIENT_SECRET,  
 
     // auth token for a single-team app
-    botToken: process.env.botToken,
+    botToken: process.env.BOT_TOKEN,
 
     // credentials used to set up oauth for multi-team apps
-    clientId: process.env.clientId,
-    clientSecret: process.env.clientSecret,
+    clientId: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
     scopes: ['bot'], 
-    redirectUri: process.env.redirectUri,
+    redirectUri: process.env.REDIRECT_URI,
  
     // functions required for retrieving team-specific info
     // for use in multi-team apps
